@@ -1,10 +1,10 @@
-var ps = require('ps-node');
-var express = require('express');
+const ps = require('ps-node');
+const express = require('express');
 const http = require('http');
 const os = require('os');
 const cron = require('node-cron');
-var influx = require('./model');
-var async = require('async');
+const influx = require('./model');
+const async = require('async');
 const request = require('request');
 
 /*
@@ -12,12 +12,12 @@ const request = require('request');
 */
 module.exports.indentify_node_process = cron.schedule('*/10 * * * * *', function () {
   console.log("indentify_node_process called()");
-  var total_influx_data = [];
+  let total_influx_data = [];
   pm2Data().then(function (pm2Response) {
-    var pm2DataResponse = JSON.parse(pm2Response);
+    let pm2DataResponse = JSON.parse(pm2Response);
     async.map(pm2DataResponse.processes, (process, callback) => {
       if (process) {
-        var influx_input = {};
+        let influx_input = {};
         influx_input['measurement'] = 'pm2-node';
         influx_input['tags'] = {
           "host": process.name || null
