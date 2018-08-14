@@ -1,0 +1,22 @@
+{
+  "name": "node_monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "find-process": "^1.1.1",
+    "influx": "^5.0.7",
+    "node-cron": "^1.2.1",
+    "nodemon": "^1.17.3",
+    "pm2": "^2.10.2",
+    "ps-node": "^0.1.6",
+    "request": "^2.85.0",
+    "shelljs": "^0.8.1"
+  }
+}
