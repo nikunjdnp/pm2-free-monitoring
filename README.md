@@ -1,5 +1,7 @@
 # pm2-free-monitoring
 
+For Complete setup, please read this article.
+
 Pm2 free monitoring project supports your pm2 organized microservice architecture to monitor all the services free. Pm2 supports key-metrics which is free till the 4 dashboard but after that what?
 
 This project provides free monitoring via Grafana through InfluxDB.
