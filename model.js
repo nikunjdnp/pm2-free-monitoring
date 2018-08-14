@@ -3,8 +3,8 @@ const Influx = require('influx');
 const influxModel = new Influx.InfluxDB({
     host: 'localhost',
     port: 8086,
-    username: 'nikunj',
-    password: 'nikunj123',
+    username: 'your_db_username',
+    password: 'your_db_password',
     database: 'pm2-prod-node',
     schema: [
       {
