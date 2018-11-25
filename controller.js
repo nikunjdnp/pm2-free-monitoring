@@ -9,7 +9,6 @@ const request = require('request');
 */
 module.exports.indentify_node_process = cron.schedule('*/10 * * * * *', function () {
   console.log("indentify_node_process called()");
- //  let total_influx_data = [];
   pm2Data().then(function (pm2Response) {
     let pm2DataResponse = JSON.parse(pm2Response);
     async.map(pm2DataResponse.processes, (process, callback) => {
