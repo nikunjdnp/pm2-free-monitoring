@@ -1,7 +1,4 @@
-const ps = require('ps-node');
-const express = require('express');
-const http = require('http');
-const os = require('os');
+require('dotenv').config();
 const cron = require('node-cron');
 const influx = require('./model');
 const async = require('async');
@@ -12,7 +9,7 @@ const request = require('request');
 */
 module.exports.indentify_node_process = cron.schedule('*/10 * * * * *', function () {
   console.log("indentify_node_process called()");
-  let total_influx_data = [];
+ //  let total_influx_data = [];
   pm2Data().then(function (pm2Response) {
     let pm2DataResponse = JSON.parse(pm2Response);
     async.map(pm2DataResponse.processes, (process, callback) => {
@@ -59,7 +56,7 @@ var pm2Data = function () {
   return new Promise((resolve, reject) => {
     request({
       method: "GET",
-      url: 'http://your_pm2_microservice_ip:9615/'
+      url: `http://${process.env.PM2_IP}:9615/`
     }, function (error, response, body) {
       if (error) {
         reject();

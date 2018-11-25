@@ -1,11 +1,12 @@
+require('dotenv').config();
 const Influx = require('influx');
 
 const influxModel = new Influx.InfluxDB({
-    host: 'localhost',
+    host: process.env.DB_HOST,
     port: 8086,
-    username: 'your_db_username',
-    password: 'your_db_password',
-    database: 'pm2-prod-node',
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     schema: [
       {
         measurement: 'pm2-prod-node',
