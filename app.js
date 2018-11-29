@@ -22,9 +22,14 @@ app.use(bodyParser.urlencoded({
     extended: true,
     parameterLimit: 100000000
 }));
+
+app.get('/', (req, res) => {
+    res.send('welcome to node scheduler');
+  });
+
 let server = app.listen(6001, function() {
     controller.indentify_node_process.start();
     console.log('Server listening on port 6001');
 });
 
-
+module.exports = server;
