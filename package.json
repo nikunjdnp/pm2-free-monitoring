@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 start app.js",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.1",
+    "chai": "^4.2.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "find-process": "^1.1.1",
@@ -19,5 +22,11 @@
     "ps-node": "^0.1.6",
     "request": "^2.85.0",
     "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "chai-http": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }

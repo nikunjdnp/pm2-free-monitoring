@@ -1,8 +1,8 @@
-require('dotenv').config();
-const cron = require('node-cron');
-const influx = require('./model');
+require('dotenv').config()
+const cron = require('node-cron')
 const async = require('async');
-const request = require('request');
+const request = require('request')
+const influx = require('./model');
 
 /*
 * Node scheduler which runs on every 10 seconds.
