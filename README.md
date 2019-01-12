@@ -7,6 +7,6 @@ Pm2 free monitoring project supports your pm2 organized microservice architectur
 This project provides free monitoring via Grafana through InfluxDB.
 
 First, You need to clone this repo and install dependent packages via `npm i`.
-Then, Insert your pm2 service running sever IP in controller.js and execute via `node start app.js`.
+Then, Insert your pm2 service running sever IP in controller.js and execute via `node app.js` or `npm start`.
 
 Yeah! Your scheduler is now working.
