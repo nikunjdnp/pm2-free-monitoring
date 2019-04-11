@@ -3,7 +3,7 @@ const Influx = require('influx');
 
 const influxModel = new Influx.InfluxDB({
     host: process.env.DB_HOST,
-    port: 8086,
+    port: process.env.DB_PORT,
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
